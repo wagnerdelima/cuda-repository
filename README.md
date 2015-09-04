@@ -1,5 +1,4 @@
 # cuda-repository
-Repository for cuda codes.
-
-Computer Science student. Pationed about high performance computing and travalling. 
+This repository is assigned to have open-source codes. You may edit and use them
+since you credit them as beloging to the right owner.  
 
