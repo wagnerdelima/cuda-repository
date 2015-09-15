@@ -1,4 +1,5 @@
-
+###
+##
 /*
 This program is an implementation of the Binary Search algorithm. 
 This implementation uses CUDA in order to gain performance. It performs searches in O(1).
