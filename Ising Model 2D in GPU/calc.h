@@ -1,4 +1,13 @@
+
 /*
+ * Ising Model 2D through Metropolis Algorithm
+ *
+ * This application implements the Metropolis algorithm applied to the 2D Ising Model. 
+ */
+
+
+/*
+ *
  * calc.h
  *
  *  Created on: Nov 19, 2013
@@ -19,8 +28,6 @@
 #define TEMP_MAX 4.1 //maximum temperature
 #define GLOBAL_ITERATIONS 100
 #define FLAG_PRINT_SPINS  0
-
-
 
 __host__ void calc(int argc, char**argv) {
 	printf(
@@ -145,12 +152,10 @@ __host__ void calc(int argc, char**argv) {
 	cudaEventRecord(start, 0);
 
 	for (float temperature = TEMP_MIN; temperature < TEMP_MAX; temperature += 0.1) {
-		for (int global_iteration = 0; global_iteration < GLOBAL_ITERATIONS;
-				global_iteration++) {
+		for (int global_iteration = 0; global_iteration < GLOBAL_ITERATIONS; global_iteration++) {
 
 			device_function_main<<<blocks, cores>>>(dSpins, d_random_data, temperature, true);
 			device_function_main<<<blocks, cores>>>(dSpins, d_random_data, temperature, false);
-			//CUDA_SAFE_CALL(cudaMemcpy(hSpins, dSpins, mem_size_out, cudaMemcpyDeviceToHost));
 		}
 	}
 	CUDA_SAFE_CALL(cudaThreadSynchronize());

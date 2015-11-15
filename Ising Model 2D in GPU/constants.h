@@ -1,3 +1,10 @@
+
+/*
+ * Ising Model 2D through Metropolis Algorithm
+ *
+ * This application implements the Metropolis algorithm applied to the 2D Ising Model. 
+ */
+
 /*
  * constants.h
  *
