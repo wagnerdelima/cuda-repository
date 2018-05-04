@@ -13,7 +13,7 @@ This implementation uses CUDA in order to gain performance. It performs searches
 
 #define N_ELEMENTS 2048
 
-#define FLAG 0//activates printing element
+#define FLAG 0 //activates printing element
 
 int BinarySearch(int *_array, int number_of_elements, int key);
 
@@ -24,7 +24,7 @@ __global__ void binarySearchGPU(int *arr, int key, int *ret){
 		ret[0] = tid;
 	}
 }
-//inicializes the array with elements
+// inicializes the array with elements
 __global__ void init(int *elem){
 
 	int tid = threadIdx.x + blockIdx.x * blockDim.x;
